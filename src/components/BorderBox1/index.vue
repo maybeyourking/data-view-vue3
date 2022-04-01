@@ -72,7 +72,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { ref, toRef, watch, onMounted } from 'vue'
+  import { ref, toRef, reactive, watch, onMounted } from 'vue'
   import { deepMerge, deepClone } from '@/utils'
   import useAutoResize from '@/mixins/useAutoResize'
 
@@ -84,10 +84,10 @@
     backgroundColor: 'transparent'
   })
 
-  const refDom = ref(null)
+  const refDom = ref()
 
   const border = ref<string[]>(['left-top', 'right-top', 'left-bottom', 'right-bottom'])
-  const defaultColor = ref<string[]>(['#4fd2dd', '#235fa7'])
+  const defaultColor = reactive<string[]>(['#4fd2dd', '#235fa7'])
   const mergedColor = ref<any>([])
 
   const { width, height } = useAutoResize(refDom)
@@ -96,7 +96,7 @@
     mergeColor()
   })
   const mergeColor = () => {
-    mergedColor.value = deepMerge(deepClone(defaultColor.value, true), toRef(props, 'color') || [])
+    mergedColor.value = deepMerge(deepClone(defaultColor, true), props.color || [])
   }
 
   onMounted(() => {

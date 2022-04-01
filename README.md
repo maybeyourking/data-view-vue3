@@ -68,6 +68,8 @@ app.mount('#app')
   - [x] dv-border-Box-2
   - [x] dv-border-Box-3
   - [x] dv-border-Box-4
+  - [x] dv-border-Box-5
+  - [x] dv-border-Box-6
 
 ### 声明
 

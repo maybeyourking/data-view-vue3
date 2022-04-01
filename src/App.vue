@@ -1,12 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import BorderBox1 from './components/BorderBox1/index.vue'
+import BorderBox1 from './components/BorderBox6/index.vue'
 </script>
 
 <template>
   <div style="width: 500px;height:200px;">
-    <border-box-1>
+    <border-box-1 :color="['#0f0','#ff0']">
       <div style="width: 500px;height:200px;display:flex;justify-content: center;align-items: center;">
         BorderBox1
       </div>
@@ -20,6 +20,8 @@ import BorderBox1 from './components/BorderBox1/index.vue'
   height: 100vh;
   color: #46bd87;
   background-color: #282c34;
-  padding: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
